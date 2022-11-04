@@ -3,33 +3,47 @@ import { createSlice } from "@reduxjs/toolkit";
 const adderSlice = createSlice({
   name: "Adder",
   initialState: {
-    todo: {
-      array: [],
-      detectName: "",
-    },
+    todo: [],
+    energyCost: {},
+    priorityColor: "",
+    detectName: "",
   },
   reducers: {
     TodoItemAdder: (state, { payload }) => {
-      state.todo.array.push({
-        date: payload.time,
+      state.todo.push({
+        date: "",
         name: payload.name,
-        priorityColor: payload.color,
-        energyCost: payload.cost,
         complated: payload.complated,
         id: payload.id,
+        extraDays: "",
       });
     },
     nameGenerator: (state, { payload }) => {
-      state.todo.detectName = payload.detectName;
+      state.detectName = payload.detectName;
     },
     removingTasks: (state, { payload }) => {
-      state.todo.array = payload.remove;
+      state.todo = payload.remove;
     },
-    addingTime: (state,{payload}) => {
-      state.todo.array.map((item) => item.date = payload.time)
-    }
+    addingTime: (state, { payload }) => {
+      state.todo.map((item) => {
+        item.date = payload.time
+        item.extraDays = payload.id
+      });
+    },
+    energyCost: (state, { payload }) => {
+      state.energyCost = payload.energy;
+    },
+    setColor: (state, { payload }) => {
+      state.priorityColor = payload.detectingColor;
+    },
   },
 });
-export const { TodoItemAdder, nameGenerator, removingTasks, addingTime } =
-  adderSlice.actions;
+export const {
+  TodoItemAdder,
+  nameGenerator,
+  removingTasks,
+  addingTime,
+  energyCost,
+  setColor,
+} = adderSlice.actions;
 export default adderSlice.reducer;

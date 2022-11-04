@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 import { v4 as GeneratorId } from "uuid";
 import "./TodoAppPage.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { TodoItemAdder } from "./TaskArray/Adder";
+import { TodoItemAdder, energyCost, setColor } from "./TaskArray/Adder";
 import { useState } from "react";
 const TodoAddPage = () => {
-  const date = new Date();
   const [active, setActive] = useState({
     energyActive1: false,
     energyActive2: false,
@@ -27,21 +26,20 @@ const TodoAddPage = () => {
   const handlerClick = () => {
     dispatch(
       TodoItemAdder({
-        time: `0${date.getDay() - 1}.${date.getMonth() + 1}.${date.getFullYear()}`,
         name: data.name,
         id: data.id,
-        color: data.color,
         complated: data.complated,
-        cost: active,
       })
     );
+    dispatch(energyCost({ energy: active }));
+    dispatch(setColor({ detectingColor: data.color }));
   };
   console.log(todoItem);
   return (
     <div className="todo-dashboard">
       <div className="todo-add-header">
-        <Link to={"/"} className="todo-settings-home"></Link>
-        <p className="todo-settings-title">New Note</p>
+        <Link to={"/"} className="todo-add-home"></Link>
+        <p className="todo-add-title">New Note</p>
       </div>
       <div className="todo-add-main">
         <form onSubmit={(event) => handlerSubmit(event)}>

@@ -10,7 +10,6 @@
   padding: 20px 15px;
   background: #141414;
   font-family: monospace;
-  border-radius: 10px;
 }
 .todo-dashboard-main {
   margin-top: 5px;
@@ -51,6 +50,9 @@ img {
   background: #181818;
   border-radius: 15px;
   color: #ffffff;
+}
+.todo-active {
+  background-color: #0093e9;
 }
 .todo-running-page {
   margin-top: 25px;
