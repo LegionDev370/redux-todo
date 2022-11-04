@@ -1,0 +1,141 @@
+.todo-add-header {
+  display: flex;
+  padding: 2px 23px;
+  column-gap: 90px;
+  align-items: center;
+}
+.todo-add-title {
+  font-family: monospace;
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
+  font-size: 24px;
+  line-height: 29px;
+  color: #78acd5;
+}
+.todo-add-home {
+  width: 19px;
+  height: 19px;
+  background-image: url(../components/assets/left-arrow.png);
+  background-position: center;
+}
+.todo-add-main {
+  margin-top: 45px;
+}
+.todo-task-item{
+  cursor: pointer;
+}
+.input-data {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+.name {
+  background: #181818;
+  border-radius: 10px;
+  position: relative;
+  padding: 15px 15px 15px 133px;
+}
+.name-title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  left: 25px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  line-height: 19px;
+  font-family: monospace;
+  color: #ffffff;
+}
+.priority {
+  display: flex;
+  gap: 5px;
+  position: relative;
+}
+.priority-title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  left: 45px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  line-height: 19px;
+  font-family: monospace;
+  color: #ffffff;
+}
+.energy-costs {
+  position: relative;
+}
+.energy-cost-settings {
+  display: flex;
+  gap: 20px;
+  margin-left: 25px;
+}
+.energy-costs-title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  left: 65px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  line-height: 19px;
+  font-family: monospace;
+  color: #ffffff;
+}
+.input-name {
+  background: none;
+  border: none;
+  padding: 5px;
+  color: #fff;
+  &::placeholder {
+    color: #fff;
+  }
+  &:focus {
+    outline: 1px solid blue;
+  }
+}
+.priority {
+  background: #181818;
+  border-radius: 10px;
+  padding: 15px 15px 15px 133px;
+}
+input[type="color"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 30px;
+  border-radius: 50%;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+input[type="color"]::-webkit-color-swatch {
+  border-radius: 50%;
+  border: none;
+}
+.input-active {
+  outline: 1px solid blue;
+  outline-offset: 2px;
+  outline-style: dashed;
+}
+.energy-costs {
+  background: #181818;
+  border-radius: 10px;
+  padding: 15px 15px 15px 133px;
+}
+.energy-cost-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.submit-btn {
+  border: none;
+  background: none;
+}
+svg {
+  cursor: pointer;
+}
